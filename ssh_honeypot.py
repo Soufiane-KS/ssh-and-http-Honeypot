@@ -2,8 +2,11 @@ import logging
 from logging.handlers import RotatingFileHandler
 import socket
 import paramiko
+import paramiko.transport
 
 logging_format = logging.Formatter('%(message)s')
+SSH_BANNER = "SSH-2.0-MySSHServer_1.0"
+host_key = 'server.key'
 
 
 funnel_logger = logging.getLogger("FunnelLogger")
@@ -83,3 +86,34 @@ class Server(paramiko.ServerInterface):
     
     def check_channel_exec_request(self, channel, command):
         command = str(command)
+
+def client_handel(client, addr, username, password):
+    client_ip = addr[0]
+    print(f"{client_ip} has connected to the server.")
+
+    try:
+        transport = paramiko.Transport()
+        transport.local_version = SSH_BANNER
+        server = Server(client_ip=client_ip, input_username=username, input_password=password)
+
+        transport.add_server_key(host_key)
+
+        transport.start_server(server=server)
+
+        channel = transport.accept(100)
+        if channel == None:
+            print('no channel was opened. ')
+
+        standard_banner = "Welcome to Ubuntu 22.04 LTS (Jammy Jellyfish)!\r\n\r\n"
+        channel.send(standard_banner)
+        emulated_shell(channel,client_ip=client_ip)
+    except Exception as error:
+        print(error)
+        print("!!! Something went wrong !!!")
+    finally:
+        try:
+            transport.close()
+        except Exception as error:
+            print(error)
+            print("something went wrong in the second try block")
+        client.close()
