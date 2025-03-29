@@ -1,6 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 import socket
+import threading
 import paramiko
 import paramiko.transport
 
@@ -59,6 +60,7 @@ def emulated_shell(channel, client):
 class Server(paramiko.ServerInterface):
 
     def __init__(self,client_ip, input_username=None, input_password=None):
+        self.event = threading.Event()
         self.client_ip = client_ip
         self.input_username = input_username
         self.input_password = input_password
@@ -87,7 +89,7 @@ class Server(paramiko.ServerInterface):
     def check_channel_exec_request(self, channel, command):
         command = str(command)
 
-def client_handel(client, addr, username, password):
+def client_handle(client, addr, username, password):
     client_ip = addr[0]
     print(f"{client_ip} has connected to the server.")
 
@@ -117,3 +119,22 @@ def client_handel(client, addr, username, password):
             print(error)
             print("something went wrong in the second try block")
         client.close()
+
+
+def honeypot(address, port, username, password):
+
+    socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socks.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
+    socks.bind((address, port))
+
+    socks.listen(100)
+    print(f"SSH server is listenint on port {port}. ")
+    
+    while True:
+        try:
+            client, addr = socks.accept()
+            ssh_honeypot_thread = threading.Thread(target=client_handle, args=(client,addr,username,password))
+        except Exception as error:
+            print(error)
+        finally:
+            pass
