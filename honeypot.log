@@ -1,0 +1,49 @@
+2025-03-29 23:07:59,074 - Connection from 127.0.0.1
+2025-03-29 23:07:59,077 - Connected (version 2.0, client OpenSSH_9.9p1)
+2025-03-29 23:08:02,122 - Auth rejected (none).
+2025-03-29 23:08:05,518 - Login attempt from 127.0.0.1 - Username: username, Password: 
+2025-03-29 23:08:05,519 - Auth rejected (password).
+2025-03-29 23:08:06,221 - Login attempt from 127.0.0.1 - Username: username, Password: 
+2025-03-29 23:08:06,222 - Auth rejected (password).
+2025-03-29 23:08:10,263 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:08:10,264 - Auth granted (password).
+2025-03-29 23:08:29,915 - Disconnect (code 11): disconnected by user
+2025-03-29 23:08:31,339 - Connection from 127.0.0.1
+2025-03-29 23:08:31,341 - Connected (version 2.0, client OpenSSH_9.9p1)
+2025-03-29 23:08:31,358 - Auth rejected (none).
+2025-03-29 23:08:34,910 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:08:34,911 - Auth granted (password).
+2025-03-29 23:08:39,331 - Disconnect (code 11): disconnected by user
+2025-03-29 23:08:39,331 - Error with client 127.0.0.1: 
+2025-03-29 23:27:19,125 - Connection from 127.0.0.1
+2025-03-29 23:27:19,127 - Connected (version 2.0, client OpenSSH_9.9p1)
+2025-03-29 23:27:19,138 - Auth rejected (none).
+2025-03-29 23:27:22,148 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:27:22,149 - Auth granted (password).
+2025-03-29 23:27:27,551 - Disconnect (code 11): disconnected by user
+2025-03-29 23:27:49,704 - Connection from 127.0.0.1
+2025-03-29 23:27:49,708 - Connected (version 2.0, client OpenSSH_for_Windows_9.5)
+2025-03-29 23:27:51,623 - Auth rejected (none).
+2025-03-29 23:27:54,957 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:27:54,958 - Auth granted (password).
+2025-03-29 23:29:55,606 - Connection from 127.0.0.1
+2025-03-29 23:29:55,611 - Connected (version 2.0, client OpenSSH_for_Windows_9.5)
+2025-03-29 23:29:55,672 - Auth rejected (none).
+2025-03-29 23:29:57,692 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:29:57,693 - Auth granted (password).
+2025-03-29 23:29:59,602 - Disconnect (code 11): disconnected by user
+2025-03-29 23:30:16,313 - Connection from 127.0.0.1
+2025-03-29 23:30:16,319 - Connected (version 2.0, client OpenSSH_9.9p1)
+2025-03-29 23:30:16,333 - Auth rejected (none).
+2025-03-29 23:30:18,049 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:30:18,051 - Auth granted (password).
+2025-03-29 23:31:07,936 - Connection from 127.0.0.1
+2025-03-29 23:31:07,939 - Connected (version 2.0, client OpenSSH_9.9p1)
+2025-03-29 23:31:07,953 - Auth rejected (none).
+2025-03-29 23:31:11,570 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:31:11,571 - Auth granted (password).
+2025-03-29 23:31:56,204 - Connection from 127.0.0.1
+2025-03-29 23:31:56,209 - Connected (version 2.0, client OpenSSH_for_Windows_9.5)
+2025-03-29 23:31:56,271 - Auth rejected (none).
+2025-03-29 23:31:59,431 - Login attempt from 127.0.0.1 - Username: username, Password: password
+2025-03-29 23:31:59,432 - Auth granted (password).
